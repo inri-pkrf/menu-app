@@ -12,7 +12,7 @@ html,body,#root{height:100%;overflow:hidden;background:#fdf8ec;font-family:Heebo
 .sp{display:block;width:12px;height:50px;border-radius:8px;background:#f1d246;animation:flash 1.6s ease-in-out infinite}
 .sp1,.sp4{transform:rotate(-55deg)}.sp2,.sp5{transform:rotate(-80deg) scaleY(.8);animation-delay:.3s}.sp3,.sp6{transform:rotate(-30deg);animation-delay:.6s}
 .sp4{transform:rotate(55deg)}.sp5{transform:rotate(80deg) scaleY(.8)}.sp6{transform:rotate(30deg)}
-.card{position:absolute;width:470px;height:270px;animation:bob 4s ease-in-out infinite}
+.card{position:absolute;width:470px;height:255px;animation:bob 4s ease-in-out infinite}
 .photo{position:absolute;inset:0 0 20px 0;border-radius:36px;overflow:hidden;border:7px solid #fff;box-shadow:0 12px 24px rgba(20,57,107,.22);background:#fff}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .ribbon{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%) rotate(-1.5deg);white-space:nowrap;font-size:40px;font-weight:900;padding:6px 34px 10px;border-radius:30px 14px 28px 12px;box-shadow:0 5px 10px rgba(0,0,0,.18);border:3px solid rgba(255,255,255,.8)}
@@ -23,9 +23,9 @@ html,body,#root{height:100%;overflow:hidden;background:#fdf8ec;font-family:Heebo
 .like.on .heart-svg{fill:#e53946;animation:beat .5s}
 .like:active{transform:scale(.9)}
 .pop{position:absolute;top:60px;font-size:44px;pointer-events:none;z-index:6;animation:floatup 1s ease-out forwards}
-.bon{position:absolute;left:0;right:0;top:1700px;display:flex;justify-content:center;align-items:center;gap:30px}
-.bon span{font-family:'Gveret Levin','Heebo',cursive;font-size:200px;font-weight:400;line-height:1;animation:bounce 2.5s ease-in-out infinite}
-.bon svg{position:absolute;width:560px;left:260px;top:172px}
+.bon{position:absolute;left:0;right:0;top:1650px;display:flex;justify-content:center;align-items:center;gap:30px}
+.bon span{font-family:'Gveret Levin','Heebo',cursive;font-size:165px;font-weight:400;line-height:1;animation:bounce 2.5s ease-in-out infinite}
+.bon svg{position:absolute;width:470px;left:305px;top:150px}
 .bon .sp{height:70px}
 @keyframes bob{50%{transform:translateY(-6px)}}
 @keyframes tilt{50%{transform:rotate(-6deg)}}
@@ -40,6 +40,6 @@ html,body,#root{height:100%;overflow:hidden;background:#fdf8ec;font-family:Heebo
 .hat-btn{position:absolute;left:60px;top:36px;width:150px;height:125px;padding:0;border:0;background:none;cursor:pointer;z-index:30;transform-origin:50% 90%;animation:hatwiggle 2.4s ease-in-out infinite}
 .hat{display:block;width:100%}
 @keyframes hatwiggle{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(20deg)}}
-.salad-banner{position:absolute;left:40px;top:1518px;width:1010px;height:172px}
+.salad-banner{position:absolute;left:40px;top:1458px;width:1010px;height:172px}
 .salad-banner .photo{inset:0}
-.salad-banner .ribbon{bottom:4px;transform:translateX(-50%);padding:14px 46px 18px;font-size:44px}
+.salad-banner .ribbon{bottom:-20px;transform:translateX(-50%);padding:8px 46px 8px;font-size:44px}

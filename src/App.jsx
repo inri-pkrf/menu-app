@@ -11,7 +11,9 @@ const DISHES = [
   { id: 'duet', name: 'דואט שעועית ואפונה', c: 'blue' },
   { id: 'curry', name: 'טבעוני סויה קארי', c: 'green' },
 ]
-const CARD_W = 470, CARD_H = 270, GAP = 16, TOP = 360, COLX = [40, 570]
+const CARD_W = 470, CARD_H = 255, GAP = 16, TOP = 360, COLX = [40, 570]
+// סיבוב מסך: פותחים את האתר עם ?rotate=90 (או 270) אם המסך מסובב פיזית אבל ה-Windows עדיין על 1920x1080
+const ROTATE = [90, 270].includes(Number(new URLSearchParams(location.search).get('rotate'))) ? Number(new URLSearchParams(location.search).get('rotate')) : 0
 const BANNER_IMG = 'salads.png' // אפשר להחליף לתמונה אמיתית: לשים קובץ ב-public/img ולשנות כאן את השם
 const pos = (i) => ({ x: COLX[i % 2], y: TOP + Math.floor(i / 2) * (CARD_H + GAP) })
 const center = (i) => ({ x: pos(i).x + CARD_W / 2, y: pos(i).y + CARD_H / 2 - 20 })
@@ -29,8 +31,8 @@ const useToday = () => {
     return () => clearInterval(t)
   }, [])
   const day = now.toLocaleDateString('he-IL', { weekday: 'long' })
-  const date = now.toLocaleDateString('he-IL', { day: 'numeric', month: 'long', year: 'numeric' })
-  return `${day}, ${date}`
+  const date = `${now.getDate()}/${now.getMonth() + 1}/${String(now.getFullYear()).slice(-2)}`
+  return `${day}, \u2066${date}\u2069`
 }
 
 const PUFFS = [[10, 0], [24, 1.2], [38, 0.5], [52, 1.8], [66, 2.4], [80, 0.9]] // left %, delay (s)
@@ -51,7 +53,7 @@ export default function App() {
   const timers = useRef({})
 
   useEffect(() => {
-    const f = () => setScale(Math.min(innerWidth / 1080, innerHeight / 1920))
+    const f = () => setScale(ROTATE ? Math.min(innerWidth / 1920, innerHeight / 1080) : Math.min(innerWidth / 1080, innerHeight / 1920))
     f(); addEventListener('resize', f)
     return () => removeEventListener('resize', f)
   }, [])
@@ -77,7 +79,7 @@ export default function App() {
 
   return (
     <div className="viewport">
-      <div className="stage" style={{ transform: `translate(-50%,-50%) scale(${scale})` }}>
+      <div className="stage" style={{ transform: `translate(-50%,-50%) rotate(${ROTATE}deg) scale(${scale})` }}>
         <img className="tri-tl" src={img('triangle-blue.png')} alt="" />
         <img className="tri-br" src={img('triangle-orange.png')} alt="" />
 
