@@ -92,7 +92,7 @@ export default function App() {
         </button>
         <div className="title-wrap">
           <i className="sp sp1" /><i className="sp sp2" /><i className="sp sp3" />
-          <div className="title-pill"><h1>מה בתפריט?</h1><p className="date">{today}</p></div>
+          <div className="title-pill"><h1>מה בתפריט לצהריים?</h1><p className="date">{today}</p></div>
           <i className="sp sp4" /><i className="sp sp5" /><i className="sp sp6" />
         </div>
 

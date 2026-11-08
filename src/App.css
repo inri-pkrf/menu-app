@@ -5,7 +5,7 @@ html,body,#root{height:100%;overflow:hidden;background:#fdf8ec;font-family:Heebo
 .tri-br{position:absolute;right:0;bottom:0;width:410px;transform:rotate(180deg);pointer-events:none}
 .tri-tl{position:absolute;left:0;top:0;width:410px;pointer-events:none}
 .logo{position:absolute;right:40px;top:30px;height:150px;border-radius:14px}
-.title-wrap{position:absolute;top:185px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:20px;height:150px}
+.title-wrap{position:absolute;top:185px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:20px;height:150px;}
 .title-pill{display:flex;flex-direction:column;align-items:center;background:#14396b;color:#fff;padding:2px 70px 14px;border-radius:75px;box-shadow:0 8px 0 rgba(20,57,107,.2)}
 .title-pill h1{font-family:'Gveret Levin','Heebo',cursive;font-size:84px;font-weight:400;line-height:1.15}
 .title-pill .date{font-size:36px;font-weight:700;line-height:1.1;color:#f1d246}
