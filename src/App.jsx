@@ -47,6 +47,11 @@ export default function App() {
     try { localStorage.setItem('likes', JSON.stringify(likes)) } catch {}
   }, [likes])
 
+  const toggleFs = () => {
+    if (document.fullscreenElement) document.exitFullscreen()
+    else document.documentElement.requestFullscreen?.()
+  }
+
   const like = (id) => {
     setLikes((l) => ({ ...l, [id]: (l[id] || 0) + 1 }))
     setActive((a) => ({ ...a, [id]: true }))
@@ -62,16 +67,18 @@ export default function App() {
       <div className="stage" style={{ transform: `translate(-50%,-50%) scale(${scale})` }}>
         <div className="blob blob-tl" />
         <svg className="wave wave-y" viewBox="0 0 700 360"><path d="M0 120C140 40 260 120 380 190S600 330 700 360H0z" /></svg>
-        <svg className="wave wave-b" viewBox="0 0 800 260"><path d="M800 0C680 70 560 40 430 110S160 240 0 260h800z" /></svg>
+        <svg className="wave wave-b" viewBox="0 0 800 260"><path d="M800 0C700 60 600 70 520 130C480 160 470 200 470 260H800z" /></svg>
 
         <img className="logo" src={img('logo.png')} alt="המכללה הלאומית לאיתנות ישראלית" />
-        <svg className="hat" viewBox="0 0 120 100" fill="none" stroke="#14396b" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
+        <button className="hat-btn" onClick={toggleFs} aria-label="מסך מלא" title="מסך מלא">
+          <svg className="hat" viewBox="0 0 120 100" fill="none" stroke="#14396b" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M30 62c-14 0-22-10-22-20 0-12 12-20 24-17 4-12 20-18 32-9 8-6 26-3 29 12 10 3 14 12 10 20-4 7-12 10-20 9" />
           <path d="M30 62v22h52V62M30 78h52" />
         </svg>
+        </button>
         <div className="title-wrap">
           <i className="sp sp1" /><i className="sp sp2" /><i className="sp sp3" />
-          <h1>תפריט המכללה היום:</h1>
+          <h1>מה בתפריט?</h1>
           <i className="sp sp4" /><i className="sp sp5" /><i className="sp sp6" />
         </div>
 
@@ -93,7 +100,7 @@ export default function App() {
         <div className="bon">
           <i className="sp sp1" /><i className="sp sp2" /><i className="sp sp3" />
           <span>בתאבון!</span>
-          <svg viewBox="0 0 600 40"><path d="M10 28C150 6 450 6 590 24" stroke="#ffc933" strokeWidth="16" strokeLinecap="round" fill="none" /></svg>
+          <svg viewBox="0 0 600 40"><path d="M10 28C150 30 450 6 590 24" stroke="#f0bc2f" strokeWidth="16" strokeLinecap="round" fill="none" /></svg>
           <i className="sp sp4" /><i className="sp sp5" /><i className="sp sp6" />
         </div>
       </div>
