@@ -11,7 +11,8 @@ const DISHES = [
   { id: 'duet', name: 'דואט שעועית ואפונה', c: 'blue' },
   { id: 'curry', name: 'טבעוני סויה קארי', c: 'green' },
 ]
-const CARD_W = 470, CARD_H = 270, GAP = 26, TOP = 380, COLX = [40, 570]
+const CARD_W = 470, CARD_H = 270, GAP = 16, TOP = 360, COLX = [40, 570]
+const BANNER_IMG = 'salads.png' // אפשר להחליף לתמונה אמיתית: לשים קובץ ב-public/img ולשנות כאן את השם
 const pos = (i) => ({ x: COLX[i % 2], y: TOP + Math.floor(i / 2) * (CARD_H + GAP) })
 const center = (i) => ({ x: pos(i).x + CARD_W / 2, y: pos(i).y + CARD_H / 2 - 20 })
 
@@ -21,6 +22,17 @@ const Heart = () => (
   </svg>
 )
 
+const useToday = () => {
+  const [now, setNow] = useState(() => new Date())
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 60000)
+    return () => clearInterval(t)
+  }, [])
+  const day = now.toLocaleDateString('he-IL', { weekday: 'long' })
+  const date = now.toLocaleDateString('he-IL', { day: 'numeric', month: 'long', year: 'numeric' })
+  return `${day}, ${date}`
+}
+
 const PUFFS = [[10, 0], [24, 1.2], [38, 0.5], [52, 1.8], [66, 2.4], [80, 0.9]] // left %, delay (s)
 const Steam = () => (
   <div className="steam">
@@ -29,6 +41,7 @@ const Steam = () => (
 )
 
 export default function App() {
+  const today = useToday()
   const [scale, setScale] = useState(1)
   const [likes, setLikes] = useState(() => {
     try { return JSON.parse(localStorage.getItem('likes')) || {} } catch { return {} }
@@ -65,9 +78,8 @@ export default function App() {
   return (
     <div className="viewport">
       <div className="stage" style={{ transform: `translate(-50%,-50%) scale(${scale})` }}>
-        <div className="blob blob-tl" />
-        <svg className="wave wave-y" viewBox="0 0 700 360"><path d="M0 120C140 40 260 120 380 190S600 330 700 360H0z" /></svg>
-        <svg className="wave wave-b" viewBox="0 0 800 260"><path d="M800 0C700 60 600 70 520 130C480 160 470 200 470 260H800z" /></svg>
+        <img className="tri-tl" src={img('triangle-blue.png')} alt="" />
+        <img className="tri-br" src={img('triangle-orange.png')} alt="" />
 
         <img className="logo" src={img('logo.png')} alt="המכללה הלאומית לאיתנות ישראלית" />
         <button className="hat-btn" onClick={toggleFs} aria-label="מסך מלא" title="מסך מלא">
@@ -78,7 +90,7 @@ export default function App() {
         </button>
         <div className="title-wrap">
           <i className="sp sp1" /><i className="sp sp2" /><i className="sp sp3" />
-          <h1>מה בתפריט?</h1>
+          <div className="title-pill"><h1>מה בתפריט?</h1><p className="date">{today}</p></div>
           <i className="sp sp4" /><i className="sp sp5" /><i className="sp sp6" />
         </div>
 
@@ -96,11 +108,15 @@ export default function App() {
           </div>
         ))}
 
+        <div className="salad-banner">
+          <div className="photo"><img src={img(BANNER_IMG)} alt="מגוון סלטים ופירות" /></div>
+          <div className="ribbon green">מגוון סלטים ופירות</div>
+        </div>
 
         <div className="bon">
           <i className="sp sp1" /><i className="sp sp2" /><i className="sp sp3" />
           <span>בתאבון!</span>
-          <svg viewBox="0 0 600 40"><path d="M10 28C150 30 450 6 590 24" stroke="#f0bc2f" strokeWidth="16" strokeLinecap="round" fill="none" /></svg>
+          <svg viewBox="0 0 600 40"><path d="M10 28C150 30 450 6 590 24" stroke="#f1d246" strokeWidth="16" strokeLinecap="round" fill="none" /></svg>
           <i className="sp sp4" /><i className="sp sp5" /><i className="sp sp6" />
         </div>
       </div>

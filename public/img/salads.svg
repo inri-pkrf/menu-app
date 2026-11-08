@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 165" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e3f6c9"/><stop offset=".5" stop-color="#fff6dc"/><stop offset="1" stop-color="#fde3cc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1010" height="165" fill="url(#bg)"/>
+  <!-- ===== salad bowl (left) ===== -->
+  <g transform="translate(20,0)">
+    <ellipse cx="150" cy="150" rx="120" ry="9" fill="#000" opacity=".1"/>
+    <!-- leaves -->
+    <g>
+      <ellipse cx="85" cy="78" rx="38" ry="26" fill="#6cc04a" transform="rotate(-25 85 78)"/>
+      <ellipse cx="130" cy="58" rx="40" ry="28" fill="#8bd45f" transform="rotate(10 130 58)"/>
+      <ellipse cx="180" cy="62" rx="40" ry="27" fill="#5db23c" transform="rotate(-12 180 62)"/>
+      <ellipse cx="222" cy="80" rx="36" ry="25" fill="#7ccc54" transform="rotate(28 222 80)"/>
+      <ellipse cx="155" cy="82" rx="46" ry="26" fill="#a3e06f"/>
+      <path d="M120 60 Q135 72 150 66 M175 60 Q188 70 200 62" stroke="#4a9a30" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- red cabbage + carrot + corn -->
+    <ellipse cx="110" cy="84" rx="14" ry="8" fill="#9b3d8f"/>
+    <ellipse cx="205" cy="90" rx="13" ry="8" fill="#b4519f"/>
+    <g fill="#ffa63d"><rect x="134" y="48" width="28" height="9" rx="4" transform="rotate(20 148 52)"/><rect x="170" y="72" width="26" height="9" rx="4" transform="rotate(-25 183 76)"/></g>
+    <g fill="#ffd23f"><circle cx="100" cy="64" r="5"/><circle cx="196" cy="48" r="5"/><circle cx="150" cy="40" r="5"/><circle cx="238" cy="66" r="5"/></g>
+    <!-- cucumber slices -->
+    <g>
+      <circle cx="118" cy="72" r="17" fill="#c9eba0" stroke="#4fa23a" stroke-width="5"/><circle cx="118" cy="72" r="6" fill="#e9f7cf"/>
+      <circle cx="196" cy="66" r="17" fill="#c9eba0" stroke="#4fa23a" stroke-width="5"/><circle cx="196" cy="66" r="6" fill="#e9f7cf"/>
+    </g>
+    <!-- cherry tomatoes -->
+    <g>
+      <circle cx="158" cy="64" r="15" fill="#e8403a"/><circle cx="153" cy="59" r="4" fill="#fff" opacity=".6"/>
+      <circle cx="82" cy="88" r="14" fill="#e8403a"/><circle cx="77" cy="83" r="4" fill="#fff" opacity=".6"/>
+      <circle cx="232" cy="92" r="14" fill="#f25a3a"/><circle cx="227" cy="87" r="4" fill="#fff" opacity=".6"/>
+    </g>
+    <!-- bowl -->
+    <path d="M42 96 H258 Q258 156 150 156 Q42 156 42 96Z" fill="#fff" stroke="#55c3e7" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M52 112 H248" stroke="#55c3e7" stroke-width="5" opacity=".6"/>
+    <path d="M62 130 H238" stroke="#f8b37d" stroke-width="5" opacity=".8"/>
+    <!-- loose tomato -->
+    <g transform="translate(285,112)"><circle r="26" fill="#e8403a"/><path d="M-10 -22 L0 -14 L10 -22 L4 -26 L0 -22 L-4 -26Z" fill="#4fa23a"/><circle cx="-9" cy="-8" r="6" fill="#fff" opacity=".45"/></g>
+  </g>
+  <!-- ===== fruits (right) ===== -->
+  <g transform="translate(690,0)">
+    <ellipse cx="160" cy="152" rx="150" ry="8" fill="#000" opacity=".08"/>
+    <!-- watermelon slice -->
+    <g transform="translate(20,40)">
+      <path d="M0 40 A70 70 0 0 0 140 40Z" fill="#4fa23a"/>
+      <path d="M8 40 A62 62 0 0 0 132 40Z" fill="#e8f7c8"/>
+      <path d="M14 40 A56 56 0 0 0 126 40Z" fill="#f2495a"/>
+      <g fill="#2b2b2b"><ellipse cx="42" cy="58" rx="3" ry="5"/><ellipse cx="70" cy="70" rx="3" ry="5"/><ellipse cx="98" cy="58" rx="3" ry="5"/><ellipse cx="56" cy="82" rx="3" ry="5" /><ellipse cx="84" cy="84" rx="3" ry="5"/></g>
+    </g>
+    <!-- orange slice -->
+    <g transform="translate(205,66)">
+      <circle r="38" fill="#ff9f2e"/><circle r="32" fill="#ffd08a"/>
+      <g stroke="#ff9f2e" stroke-width="3"><path d="M0 -32V32M-32 0H32M-23 -23L23 23M23 -23L-23 23"/></g>
+      <circle r="5" fill="#ffd08a"/>
+    </g>
+    <!-- strawberries -->
+    <g transform="translate(262,100)">
+      <path d="M0 -26 C-26 -26 -30 4 0 30 C30 4 26 -26 0 -26Z" fill="#e8283f"/>
+      <path d="M-14 -26 L0 -18 L14 -26 L6 -34 L0 -28 L-6 -34Z" fill="#4fa23a"/>
+      <g fill="#ffe28a"><ellipse cx="-8" cy="-6" rx="2" ry="3"/><ellipse cx="8" cy="-6" rx="2" ry="3"/><ellipse cx="0" cy="4" rx="2" ry="3"/><ellipse cx="-8" cy="12" rx="2" ry="3"/><ellipse cx="8" cy="12" rx="2" ry="3"/></g>
+    </g>
+    <!-- apple -->
+    <g transform="translate(238,38)">
+      <path d="M0 -14 C-22 -26 -36 -2 -26 18 C-20 32 -8 30 0 26 C8 30 20 32 26 18 C36 -2 22 -26 0 -14Z" fill="#7ccc2f"/>
+      <path d="M0 -14 Q2 -26 10 -30" stroke="#6b4a2b" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M4 -24 Q16 -34 24 -24 Q14 -18 4 -24Z" fill="#4fa23a"/>
+      <circle cx="-12" cy="2" r="5" fill="#fff" opacity=".4"/>
+    </g>
+    <!-- grapes -->
+    <g transform="translate(300,56)" fill="#8a4fbf">
+      <circle cx="-10" cy="0" r="9"/><circle cx="10" cy="0" r="9"/><circle cx="0" cy="14" r="9"/><circle cx="-18" cy="14" r="9"/><circle cx="18" cy="14" r="9"/><circle cx="-9" cy="28" r="9"/><circle cx="9" cy="28" r="9"/><circle cx="0" cy="42" r="9"/>
+      <path d="M0 -4 Q4 -18 14 -22" stroke="#6b4a2b" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <g fill="#fff" opacity=".35"><circle cx="-13" cy="-3" r="3"/><circle cx="7" cy="-3" r="3"/><circle cx="-3" cy="11" r="3"/></g>
+    </g>
+  </g>
+</svg>
